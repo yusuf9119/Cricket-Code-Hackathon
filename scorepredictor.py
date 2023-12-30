@@ -57,7 +57,6 @@ le = LabelEncoder()
 for col in ['bat team','bowl team']:
     cricket_df[col] = le.fit_transform(cricket_df[col])
 cricket_df.head()
-
 ColumnTransformer(['encoder',OneHotEncoder(),[0,1]],remainder='passthrough')
 cricket_df = np.array(ColumnTransformer.fit_transform(cricket_df))
 
